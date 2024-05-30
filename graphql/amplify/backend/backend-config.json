@@ -1,11 +1,11 @@
 {
-	"api": {
-		"notesapi": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"securityType": "API_KEY"
-			}
-		}
-	}
+  "api": {
+    "notesapi": {
+      "output": {
+        "securityType": "API_KEY"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  }
 }
