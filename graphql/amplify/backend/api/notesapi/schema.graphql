@@ -1,7 +1,18 @@
 type Note @model {
-  id: ID!
-  clientId: ID
-  name: String!
-  description: String
-  completed: Boolean
+    id: ID!
+    clientId: ID
+    name: String!
+    description: String
+    completed: Boolean
+    subTasks: [SubTask] @connection(name: "NoteSubTasks") # relationship
+}
+
+# TODO: add auth rules
+type SubTask @model
+{
+    id: ID!
+    note: Note @connection(name: "NoteSubTasks")
+    clientId: ID
+    description: String!
+    completed: Boolean
 }
